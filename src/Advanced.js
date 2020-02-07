@@ -74,6 +74,12 @@ export default function Advanced() {
     return ret;
   };
 
+  // let flatten = function (arr) {
+  //   return arr.reduce(function (flat, toFlatten) {
+  //     return flat.concat(Array.isArray(toFlatten) ? flatten(toFlatten) : toFlatten);
+  //   }, []);
+  // }
+
   let handleClick = () => {
     let checked = document.querySelectorAll('input[type="checkbox"]:checked');
     let postureSelection = Array.prototype.map.call(checked, function(obj) {
