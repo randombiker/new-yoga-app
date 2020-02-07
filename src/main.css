@@ -1,0 +1,313 @@
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.btnInstructions:focus {
+  outline: none !important;
+}
+
+.container {
+  position: relative;
+  margin-top: 20px;
+  max-width: 500px !important;
+  height: auto;
+  text-align: center;
+  border: solid orangered 2px;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.image {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.61);
+  max-height: 368px;
+  max-width: 446px;
+  width: 100%;
+  height: auto;
+  border: solid orangered 1px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+.myIcons {
+  width: 60px;
+  height: 45px;
+}
+.myLogo {
+  height: 50px;
+  width: 50px;
+}
+.text {
+  max-width: 450px;
+  text-align: center;
+  border: solid orangered 1px;
+  border-radius: 5px;
+  padding: 2px;
+  color: whitesmoke;
+  margin-top: 10px;
+}
+
+.myButton {
+  background-color: orangered;
+  color: whitesmoke;
+
+  padding: 5px;
+  border-radius: 5px;
+  width: 80px;
+  /* position: absolute; */
+  bottom: 15px;
+  margin: 3px;
+}
+
+.btn {
+  margin: 10px;
+  background-color: orangered;
+
+  color: whitesmoke;
+}
+
+.btnCount {
+  margin: 10px;
+  background-color: rgb(106, 128, 228);
+  color: whitesmoke;
+}
+
+.btnInstructions {
+  margin: 10px;
+  background-color: orangered;
+  color: whitesmoke;
+  font-size: 12px;
+  border-radius: 5px;
+}
+
+.namestyle {
+  color: whitesmoke;
+  padding: 10px;
+}
+
+#controlGroup {
+  display: block;
+}
+#personalized {
+  display: none;
+}
+#containerAdvanced {
+  display: none;
+  margin-top: 0;
+}
+.row-sm {
+  padding: 0;
+}
+.time,
+.level {
+  margin: 5px;
+  font-size: 18px;
+}
+
+/* radio buttons style */
+.btnstyle {
+  display: block;
+  position: relative;
+
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Hide the browser's default radio button */
+.btnstyle input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  border-radius: 5px;
+}
+
+.advanced {
+  border-radius: 5px;
+}
+
+/* When the radio button is checked, add a blue background */
+.btnstyle input:checked ~ .checkmark {
+  background-color: orangered;
+  padding: 2px 3px 6px 3px;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.btnstyle input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Popup container - can be anything you want */
+.popup {
+  /* display: inline-block; */
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* The actual popup */
+.popup .popuptext {
+  /* visibility: hidden; */
+  display: none;
+  background-color: rgba(0, 0, 0, 0.438);
+  max-width: 450px;
+  text-align: center;
+  border: solid orangered 1px;
+  border-radius: 5px;
+  padding: 5px;
+  margin-top: 10px;
+  color: whitesmoke;
+  /* position: absolute; */
+  z-index: 1;
+}
+
+/* Popup arrow */
+/* .popup .popuptext::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+} */
+
+/* Toggle this class - hide and show the popup */
+.popup .block {
+  /* visibility: visible; */
+  display: block;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* link over image */
+
+.wrapper {
+  /* width: 200px;
+  height: 200px; */
+  position: relative;
+}
+
+.wrapper #instructionsBtn {
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper #instructions {
+  width: 10%;
+  height: 10%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.wrapper #logoImg {
+  height: 50px;
+  width: 50px;
+  margin-right: 10px;
+  margin: 6px;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+/* counter */
+
+.counter {
+  font-family: inherit;
+  text-align: center;
+  width: 70px;
+  height: 60px;
+  padding: 10px 17px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.counter:before,
+.counter:after {
+  content: '';
+  background-color: orangered;
+  border: 2px solid #fff;
+  border-radius: 15px;
+  position: absolute;
+  left: 7px;
+  top: 7px;
+  bottom: 7px;
+  right: 7px;
+  z-index: -1;
+}
+.counter:after {
+  background-color: #fc0404;
+  border-color: #f70303;
+  transform: rotate(-6deg);
+  left: 8px;
+  right: 8px;
+  z-index: -2;
+}
+
+.counter .counter-value {
+  color: #07374e;
+  background-color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 3px 0 2px;
+  border-radius: 15px;
+  display: block;
+}
+.counter h5 {
+  color: #fff;
+  font-size: 10px;
+  font-weight: 400;
+  margin: 0 0 -2px 0;
+}
+
+@media screen and (max-width: 990px) {
+  .counter {
+    margin-bottom: 7px;
+  }
+}
+@media only screen and (max-width: 444px) {
+  .container {
+    margin-top: 0;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
