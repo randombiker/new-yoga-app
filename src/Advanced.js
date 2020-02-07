@@ -107,17 +107,6 @@ export default function Advanced() {
   console.log(newAsanaName);
   console.log(newInstructionsArray);
 
-  let myToggle = function() {
-    if (postures[0] === undefined) {
-      return;
-    } else
-      return (
-        (document.getElementById('controlGroup').style.display = 'none'),
-        (document.getElementById('personalized').style.display = 'block'),
-        (document.getElementById('containerAdvanced').style.display = 'block')
-      );
-  };
-
   let myOnclickk = function() {
     index = index - 1;
     if (postures[0] === undefined) {
@@ -125,6 +114,9 @@ export default function Advanced() {
     } else if (index + 1 === postures[postures.length - 1]) {
       setIndex((index = postures[postures.length - 1]));
     } else {
+      document.getElementById('controlGroup').style.display = 'none';
+      document.getElementById('personalized').style.display = 'block';
+      document.getElementById('containerAdvanced').style.display = 'block';
       setIndex(index + 1);
       setPostures((postures = postures[postures.length - 1]));
       setNewAsanaName((newAsanaName = newAsanaName[newAsanaName.length - 1]));
@@ -412,9 +404,6 @@ export default function Advanced() {
               onClick={() => {
                 myOnclickk();
               }}
-              onClick={() => {
-                myToggle();
-              }}
             >
               Set
             </span>
@@ -459,17 +448,14 @@ export default function Advanced() {
               </p>
             </div>
             <div className="row justify-content-center ">
-              <span className="myButton btn" onClick={() => myOnclickkBack()}>
+              <span className="myButton " onClick={() => myOnclickkBack()}>
                 back
               </span>
               <Link to="/">
-                <div className="myButton btn">home</div>
+                <div className="myButton ">home</div>
               </Link>
 
-              <span
-                className="myButton btn"
-                onClick={() => myOnclickkForward()}
-              >
+              <span className="myButton " onClick={() => myOnclickkForward()}>
                 next
               </span>
             </div>
