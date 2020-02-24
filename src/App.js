@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Home from './Home.js';
+import Main from './Main.js';
 import BeginnerTwenty from './BeginnerTwenty.js';
 import BeginnerForty from './BeginnerForty.js';
 import BeginnerSixty from './BeginnerSixty.js';
@@ -16,6 +17,7 @@ class App extends Component {
         <BrowserRouter>
           <div>
             <Route exact={true} path="/" component={Home} />
+            <Route exact={true} path="/Main" component={Main} />
 
             <Route
               exact={true}

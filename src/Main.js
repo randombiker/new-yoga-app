@@ -27,13 +27,11 @@ class Home extends Component {
     return (
       <>
         <div className="container">
-          {' '}
-          {/* <img className="about" src="images/about.png" alt=""></img> */}
           <div className="col col-md-6 offset-md-4 mx-auto ">
-            <div id="showMeLogo">
+            <div>
               <img className="logo" src="images/logo.png" alt=""></img>
             </div>
-            <div className="row-sm level text" id="showMe">
+            <div className="row-sm level text">
               <div className="row-sm level namestyle">Choose your level</div>
               <div className="row-sm ">
                 <div>
@@ -68,7 +66,7 @@ class Home extends Component {
                 </div>
               </div>
             </div>
-            <div className="row-sm level text " id="showMe">
+            <div className="row-sm level text ">
               <div className="row-sm level namestyle">
                 Choose the session length
               </div>
@@ -113,22 +111,16 @@ class Home extends Component {
               </div>
             </div>{' '}
             <div className="row-sm ">
-              <button
-                id="showMe"
-                className="btn btn-md"
-                onClick={() => this.handleClick()}
-              >
+              <button className="btn btn-md" onClick={() => this.handleClick()}>
                 Start
               </button>
             </div>
-            <div className="col  text" id="showMe">
+            <div className="col  text">
               <span className="col-sm  namestyle">
                 Advanced
                 <span className="advanced">
                   <Link to="/Advanced">
-                    <span id="showMe" className="btn btn-md">
-                      Create your sequence
-                    </span>
+                    <span className="btn btn-md">Create your sequence</span>
                   </Link>
                 </span>
               </span>

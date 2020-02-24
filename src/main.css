@@ -9,8 +9,28 @@ a {
 .btnInstructions:focus {
   outline: none !important;
 }
+body {
+  background-image: url('/images/background.jpg');
+}
+
+.logo {
+  max-width: 150px;
+  max-height: 150px;
+}
+
+/* .about {
+  max-width: 60px;
+  max-height: 60px;
+  float: left;
+} */
 
 .container {
+  background-image: linear-gradient(
+      rgba(26, 24, 24, 0.5),
+      rgba(15, 14, 14, 0.5)
+    ),
+    url('/images/background.jpg');
+
   position: relative;
   margin-top: 20px;
   max-width: 500px !important;
@@ -19,6 +39,7 @@ a {
   border: solid orangered 2px;
   border-radius: 5px;
   padding: 5px;
+  overflow: hidden;
 }
 
 .image {
@@ -33,12 +54,26 @@ a {
   margin-bottom: 15px;
 }
 .myIcons {
-  width: 60px;
-  height: 45px;
+  border: 1px solid grey;
+  width: 85px;
+  height: 60px;
+  margin-right: 2px;
+  padding: 4px;
 }
 .myLogo {
   height: 50px;
   width: 50px;
+}
+
+input[type='checkbox'] {
+  display: none;
+}
+
+:checked + img {
+  border: 3px solid orangered;
+  background-color: rgb(59, 52, 52);
+  border-radius: 3px;
+  z-index: 1000;
 }
 .text {
   max-width: 450px;
@@ -48,25 +83,38 @@ a {
   padding: 2px;
   color: whitesmoke;
   margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .myButton {
   background-color: orangered;
   color: whitesmoke;
-
   padding: 5px;
+  border: solid 2px orangered;
   border-radius: 5px;
   width: 80px;
-  /* position: absolute; */
   bottom: 15px;
   margin: 3px;
+  border-width: 1px 2px 3px 1px;
+  border-radius: 5px;
+  border-color: grey #ddd #999 grey;
+  background-clip: padding-box;
+}
+.myButton:hover {
+  background-color: orangered;
 }
 
 .btn {
   margin: 10px;
   background-color: orangered;
-
   color: whitesmoke;
+  border-width: 1px 2px 3px 1px;
+  border-radius: 5px;
+  border-color: grey #ddd #999 grey;
+  background-clip: padding-box;
+}
+.btn:hover {
+  background-color: orangered;
 }
 
 .btnCount {
@@ -85,7 +133,7 @@ a {
 
 .namestyle {
   color: whitesmoke;
-  padding: 10px;
+  /* padding: 10px; */
 }
 
 #controlGroup {
@@ -133,9 +181,9 @@ a {
   border-radius: 5px;
 }
 
-/* When the radio button is checked, add a blue background */
+/* When the radio button is checked, add an orange background */
 .btnstyle input:checked ~ .checkmark {
-  background-color: orangered;
+  background-color: lightslategray;
   padding: 2px 3px 6px 3px;
 }
 
@@ -163,7 +211,6 @@ a {
 
 /* The actual popup */
 .popup .popuptext {
-  /* visibility: hidden; */
   display: none;
   background-color: rgba(0, 0, 0, 0.438);
   max-width: 450px;
@@ -171,9 +218,8 @@ a {
   border: solid orangered 1px;
   border-radius: 5px;
   padding: 5px;
-  margin-top: 10px;
+  margin: 10px 5px;
   color: whitesmoke;
-  /* position: absolute; */
   z-index: 1;
 }
 
@@ -219,8 +265,6 @@ a {
 /* link over image */
 
 .wrapper {
-  /* width: 200px;
-  height: 200px; */
   position: relative;
 }
 
@@ -296,7 +340,71 @@ a {
   color: #fff;
   font-size: 10px;
   font-weight: 400;
-  margin: 0 0 -2px 0;
+  margin: -2px 0 0 -2px;
+}
+
+/* buttons appear after 8 seconds */
+
+#showMe {
+  animation: 10s ease 0s normal forwards 1 fadein;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  66% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#showMeLogo {
+  animation: fade-in-move-up 7s;
+}
+
+@keyframes fade-in-move-up {
+  0% {
+    opacity: 0;
+    transform: translateY(200px) scale(1.7);
+  }
+  77% {
+    opacity: 1;
+    transform: translateY(200px) scale(1.7);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+#hideMe {
+  color: whitesmoke;
+  font-size: 16px;
+  -moz-animation: cssAnimation 0s ease-in 5s forwards;
+  /* Firefox */
+  -webkit-animation: cssAnimation 0s ease-in 5s forwards;
+  /* Safari and Chrome */
+  -o-animation: cssAnimation 0s ease-in 5s forwards;
+  /* Opera */
+  animation: cssAnimation 0s ease-in 5s forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+@keyframes cssAnimation {
+  to {
+    width: 0;
+    height: 30px;
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes cssAnimation {
+  to {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+  }
 }
 
 @media screen and (max-width: 990px) {
@@ -304,10 +412,19 @@ a {
     margin-bottom: 7px;
   }
 }
+/* @media screen and (min-width: 768px) {
+  .row-sm {
+    width: inherit;
+  }
+} */
 @media only screen and (max-width: 444px) {
   .container {
-    margin-top: 0;
+    margin-top: 2px;
     padding-left: 0 !important;
     padding-right: 0 !important;
+    /* border: none; */
+  }
+  .coladv {
+    padding: 0 5px;
   }
 }
